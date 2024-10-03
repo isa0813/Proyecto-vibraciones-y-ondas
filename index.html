@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación Masa-Resorte</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="input-field">
+            <label for="tipoMovimiento">Tipo de movimiento</label>
+            <select id="tipoMovimiento">
+                <option value="" selected disabled>Selecciona una opción</option>
+                <option value="1">Movimiento armónico simple</option>
+                <option value="2">Movimiento amortiguado</option>
+                <option value="3">Movimiento forzado sin amortiguar</option>
+                <option value="4">Movimiento forzado amortiguado </option>
+            </select>
+            <div id="divMasa">
+                <label for="masa">Masa 1</label>
+                <input type="number" id="masa1">
+            </div>  
+            <div id="divMasa2">
+                  <label for="masa2">Masa 2</label>
+                  <input type="number" id="masa2">
+            </div>
+            <div id="divConstanteElasticidad">
+                  <label for="constanteElasticidad">Constante de elasticidad del resorte</label>
+                  <input type="number" id="constanteElasticidad">
+            </div>
+            <div id="divCoeficienteFriccion">
+                <label for="coeficienteFriccion">Coeficiente de fricción</label>
+                <input type="number" id="coeficienteFriccion">
+            </div>
+            <div id="divPosicionInicial">
+                  <label for="posicionInicial">Posicion inicial</label>
+                  <input type="number" id="posicionInicial">
+            </div>
+            <div id="divVelocidadInicial">
+                  <label for="velocidadInicial">Velocidad inicial</label>
+                  <input type="number" id="velocidadInicial">
+            </div>
+            <div id="divAmortiguamiento">
+                  <label for="amortiguamiento">Constante Amortiguamiento</label>
+                  <input type="number" id="amortiguamiento">
+            </div>
+            <div id="divFrecuenciaExterna">
+                    <label for="frecuenciaExterna">Frecuencia de la fuerza externa.</label>
+                    <input type="number" id="frecuenciaExterna">
+            </div>
+            <div id="divFuerzaExterno">
+                <label for="fuerzaExterna">Fuerza Externa</label>
+                <input type="number" id="fuerzaExterna">
+            </div>
+            <button id="Calcular">Calcular</button>
+            </div>
+        <div class="subContenedor1"> 
+                <canvas id="simulacionResorte" width="400px" height="300"></canvas>
+                <div class="resultadosEcuaciones">  
+                    <label>Ecuacion de movimiento</label>
+                    <span id="edo1">0</span>  
+                    
+                </div>
+        </div>
+        <div class="contenedorEcuacion">
+            <div id="divGraficaMovimiento" style="display: none;">
+                <label>Grafica de movimiento</label>
+            </div>
+            <div class="SeleccionEcuacion">
+                <label for="tipoGrafica">Graficas de las ecuaciones</label>
+                <select id="tipoGrafica">
+                    <option value="14">Todas las ecuaciones</option>
+                    <option value="11">Ecuacion movimiento</option>
+                    <option value="12">Ecuacion velocidad</option>
+                    <option value="13">Ecuacion aceleracion</option>
+                </select>
+            </div>
+            <canvas id="graficosMovimiento" width="500px" height="300"></canvas>
+            <div class="spanConstantes">
+                <span id="c1"></span>
+                <span id="c2"></span>
+                <span id="c3"></span>
+                <span id="c4"></span>
+                <span id="c5"></span>
+                <span id="c6"></span>
+                <span id="c7"></span>
+                <span id="c8"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="simulacion.js"></script>
+</body>
+</html>
